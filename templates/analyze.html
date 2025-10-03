@@ -23,6 +23,47 @@
 	  <img src="/plot/hist" class="img-fluid border rounded shadow-sm" alt="Histograms" style="max-width: 45%;">
 	  <img src="/plot/corr" class="img-fluid border rounded shadow-sm" alt="Correlation Heatmap" style="max-width: 45%;">
 	</div>
+		
+	<h4 class="mt-4">Column Data Types</h4>
+	{{ dtypes|safe }}
+	
+	<h4 class="mt-4">Missing Values</h4>
+	{{ missing|safe }}
+	
+	<h4 class="mt-4">Scatter Plot</h4>
+	<form method="post" action="/scatter" target="_blank" class="row g-2">
+	  <div class="col-md-4">
+	    <select name="xcol" class="form-select" required>
+	      {% for col in columns %}
+	      <option value="{{ col }}">{{ col }}</option>
+	      {% endfor %}
+	    </select>
+	  </div>
+	  <div class="col-md-4">
+	    <select name="ycol" class="form-select" required>
+	      {% for col in columns %}
+	      <option value="{{ col }}">{{ col }}</option>
+	      {% endfor %}
+	    </select>
+	  </div>
+	  <div class="col-md-4">
+	    <button type="submit" class="btn btn-warning">Generate Scatter Plot</button>
+	  </div>
+	</form>
+	
+	<h4 class="mt-4">Machine Learning Demo</h4>
+	<form method="post" action="/ml" target="_blank" class="row g-2">
+	  <div class="col-md-6">
+	    <select name="target" class="form-select" required>
+	      {% for col in columns %}
+	      <option value="{{ col }}">{{ col }}</option>
+	      {% endfor %}
+	    </select>
+	  </div>
+	  <div class="col-md-6">
+	    <button type="submit" class="btn btn-danger">Run Linear Regression</button>
+	  </div>
+	</form>
 	{% endblock %}
 </body>
 </html>
