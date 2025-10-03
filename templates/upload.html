@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload CSV</title></head>
+<body>
+    <h1>Upload a CSV File</h1>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Analyze</button>
+    </form>
+    <a href="/">Back Home</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Data Science Topics</title></head>
+<body>
+    <h1>Data Science Topics</h1>
+    <ul>
+        {% for topic in topics %}
+        <li>
+            <strong>{{ topic.title }}</strong>: {{ topic.desc }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back Home</a>
+</body>
+</html>
