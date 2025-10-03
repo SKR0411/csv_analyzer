@@ -69,3 +69,6 @@ def plot(plot_type):
     plt.savefig(img, format="png")
     img.seek(0)
     return send_file(img, mimetype="image/png")
+    
+if __name__ == "__main__":
+    app.run(debug=True)
