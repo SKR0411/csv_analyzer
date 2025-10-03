@@ -2,11 +2,15 @@
 <html>
 <head><title>Upload CSV</title></head>
 <body>
-    <h1>Upload a CSV File</h1>
-    <form action="/analyze" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".csv" required>
-        <button type="submit">Analyze</button>
-    </form>
-    <a href="/">Back Home</a>
+	{% extends "base.html" %}
+	{% block content %}
+	<h2>Upload a CSV File</h2>
+	<form action="/analyze" method="post" enctype="multipart/form-data" class="mt-3">
+	  <div class="mb-3">
+	    <input type="file" name="file" accept=".csv" required class="form-control">
+	  </div>
+	  <button type="submit" class="btn btn-success">Analyze</button>
+	</form>
+	{% endblock %}
 </body>
 </html>

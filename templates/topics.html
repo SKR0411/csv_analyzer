@@ -2,14 +2,21 @@
 <html>
 <head><title>Data Science Topics</title></head>
 <body>
-    <h1>Data Science Topics</h1>
-    <ul>
-        {% for topic in topics %}
-        <li>
-            <strong>{{ topic.title }}</strong>: {{ topic.desc }}
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back Home</a>
+	{% extends "base.html" %}
+	{% block content %}
+	<h2>Data Science Topics</h2>
+	<div class="row">
+	  {% for topic in topics %}
+	  <div class="col-md-4 mb-3">
+	    <div class="card shadow-sm h-100">
+	      <div class="card-body">
+	        <h5 class="card-title">{{ topic.title }}</h5>
+	        <p class="card-text">{{ topic.desc }}</p>
+	      </div>
+	    </div>
+	  </div>
+	  {% endfor %}
+	</div>
+	{% endblock %}
 </body>
 </html>
